@@ -1,7 +1,10 @@
-from sys import version
+from sys import version_info
 from utils.ColorUtils import *
+from decimal import Decimal
 
-if float(version[0:3]) < 3.6:
+py_minor_version = version_info[1]
+required_minor_version = 6 # python 3.6 or above 
+if py_minor_version < required_minor_version:
 	print(color.FAIL+'Python 3.6 or above required!'+color.ENDC)
 	exit()
 
